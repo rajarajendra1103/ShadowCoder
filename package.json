@@ -9,6 +9,7 @@
     "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\"",
     "build": "next build",
     "start": "next start",
+    "start:backend": "node server.js",
     "lint": "eslint"
   },
   "dependencies": {

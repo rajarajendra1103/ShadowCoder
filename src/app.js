@@ -28,6 +28,14 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.get('/health', (req, res) => {
+  res.json({ status: 'ok', timestamp: new Date() });
+});
+
+app.get('/', (req, res) => {
+  res.send('Shadow Coder API is running.');
+});
+
 app.use('/api/auth', authRoutes);
 app.use('/api/problems', problemsRoutes);
 app.use('/api/invites', invitesRoutes);
