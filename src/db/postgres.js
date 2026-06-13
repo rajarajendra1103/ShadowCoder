@@ -1,5 +1,10 @@
 import pg from 'pg';
 import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const { Pool } = pg;
 
@@ -10,7 +15,7 @@ const pool = new Pool({
   user: process.env.PG_USER,
   password: process.env.PG_PASSWORD,
   ssl: { 
-    ca: fs.readFileSync('./global-bundle.pem').toString(),
+    ca: fs.readFileSync(path.resolve(__dirname, '../../global-bundle.pem')).toString(),
     rejectUnauthorized: true 
   },
   max: 10,
