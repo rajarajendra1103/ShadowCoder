@@ -103,14 +103,27 @@ npm install
 ### 2. Configure Environment Variables
 Create a `.env` file in the root directory and define the configuration values:
 ```env
-PORT=5000
-DATABASE_URL=postgresql://postgres:password@localhost:5432/shadow_coder
-JWT_SECRET=your_super_secure_jwt_secret
-FRONTEND_URL=http://localhost:3000
-SMTP_HOST=smtp.mailtrap.io
-SMTP_PORT=2525
-SMTP_USER=your_smtp_username
+PORT=4000
+FRONTEND_URL=https://shadow-coder.vercel.app
+JWT_SECRET=your_jwt_secret_key
+
+# AWS Aurora/RDS PostgreSQL Config
+PG_HOST=database-1.cluster-cklmwcss8o9c.us-east-1.rds.amazonaws.com
+PG_PORT=5432
+PG_DATABASE=postgres
+PG_USER=postgres
+PG_PASSWORD=your_db_password
+
+# JDoodle API (Code Execution)
+JDOODLE_CLIENT_ID=your_jdoodle_client_id
+JDOODLE_CLIENT_SECRET=your_jdoodle_client_secret
+
+# SMTP Config (Email Invites)
+SMTP_HOST=smtp.resend.com
+SMTP_PORT=587
+SMTP_USER=resend
 SMTP_PASS=your_smtp_password
+SMTP_FROM=onboarding@resend.dev
 ```
 
 ### 3. Initialize Database Tables
