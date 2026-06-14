@@ -21,31 +21,6 @@
   <img src="public/architecture.png" alt="Shadow Coder System Architecture" width="800" />
 </p>
 
-Here is how the real-time telemetry flows from the candidate's editor to the recruiter's dashboard:
-
-```mermaid
-graph TD
-    subgraph Candidate Environment (Client)
-        A[Monaco Code Editor] -->|Real-time Keystrokes| B(useRecorder Hook)
-        B -->|WebSocket Stream| C(Socket.io Client)
-    end
-
-    subgraph Backend Infrastructure
-        C -->|Live Telemetry| D[Express & Socket.io Server]
-        D -->|Batch Writes & Metrics| E[(PostgreSQL Database)]
-    end
-
-    subgraph Recruiter Dashboard
-        F[Dashboard & Session Review] -->|Query Sessions| D
-        F -->|Fetch Playback Events| E
-        F -->|Visualize Telemetry| G[Recharts Analytics]
-    end
-
-    style A fill:#1e1e2e,stroke:#313244,stroke-width:2px,color:#cdd6f4
-    style D fill:#11111b,stroke:#89b4fa,stroke-width:2px,color:#cdd6f4
-    style E fill:#11111b,stroke:#a6e3a1,stroke-width:2px,color:#cdd6f4
-    style G fill:#11111b,stroke:#cba6f7,stroke-width:2px,color:#cdd6f4
-```
 
 ---
 
