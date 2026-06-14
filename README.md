@@ -62,7 +62,6 @@ graph TD
 
 ### ✉️ Invites Workflow
 - **Single Invites**: Easily configure and trigger unique candidate session URLs containing custom limits and specific programming tasks.
-- **Campaign Bulk CSV Send**: Dispatch personalized email invite campaigns to a large pool of candidates at once via structured CSV upload.
 
 ---
 
