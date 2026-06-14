@@ -17,6 +17,10 @@
 
 ## 🎨 System Architecture & Workflow
 
+<p align="center">
+  <img src="public/architecture.png" alt="Shadow Coder System Architecture" width="800" />
+</p>
+
 Here is how the real-time telemetry flows from the candidate's editor to the recruiter's dashboard:
 
 ```mermaid
